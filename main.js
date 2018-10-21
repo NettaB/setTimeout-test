@@ -19,9 +19,7 @@
 
 // main(100);
 
-let counter = 0;
-let sum = 0;
-function main(n) {
+function main(n, counter = 0, sum = 0) {
 	function testRunner() {
 		let t0 = performance.now();
 		setTimeout(() => {
@@ -30,7 +28,7 @@ function main(n) {
 				console.log(`${counter}: ${sum/counter}`);
 				return;
 			}
-			sum = sum + t1 - t0;
+			sum += (t1-t0);
 			counter++
 			testRunner();
 		}, 0)
